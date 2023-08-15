@@ -8,7 +8,7 @@
 import Foundation
 
 struct Route {
-    
+
     let start: String
     let end: String
 }

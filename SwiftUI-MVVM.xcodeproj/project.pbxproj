@@ -147,6 +147,8 @@
 		D83370092A8BB04900115B00 /* Delivery List */ = {
 			isa = PBXGroup;
 			children = (
+				D83370162A8BB64200115B00 /* Presentation */,
+				D83370152A8BB60500115B00 /* UI */,
 			);
 			path = "Delivery List";
 			sourceTree = "<group>";
@@ -190,6 +192,20 @@
 				D83370132A8BB4B400115B00 /* Sender.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D83370152A8BB60500115B00 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D83370162A8BB64200115B00 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

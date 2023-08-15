@@ -15,5 +15,6 @@ struct Delivery {
     let goodsPicture: URL?
     let deliveryFee: String
     let surchage: String
-    
+    let route: Route
+    let sender: Sender
 }
