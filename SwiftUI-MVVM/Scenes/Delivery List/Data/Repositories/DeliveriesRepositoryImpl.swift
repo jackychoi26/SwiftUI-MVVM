@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DeliveriesRepositoryImpl: DeliveriesRepository  {
+class DeliveriesRepositoryImpl: DeliveriesRepository  {
 
     private let localStorage: DeliveriesLocalStorage
     private let webservice: DeliveriesWebservice

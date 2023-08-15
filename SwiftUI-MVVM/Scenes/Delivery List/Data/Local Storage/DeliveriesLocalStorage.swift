@@ -8,9 +8,9 @@
 import Foundation
 
 // TODO: conform to CanPaginate protocol
-struct DeliveriesLocalStorage {
+class DeliveriesLocalStorage {
 
-    func get(offset: Int, limit: Int = 10) {
-        
+    func get(offset: Int, limit: Int = 10) -> [Delivery] {
+        return []
     }
 }

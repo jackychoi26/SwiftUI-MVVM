@@ -23,6 +23,13 @@
 		D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370242A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift */; };
 		D83370272A8BB92400115B00 /* DeliveriesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370262A8BB92400115B00 /* DeliveriesWebservice.swift */; };
 		D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */; };
+		D83370332A8BBC5F00115B00 /* Delivery+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370322A8BBC5F00115B00 /* Delivery+stub.swift */; };
+		D83370352A8BBC7300115B00 /* Route+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370342A8BBC7300115B00 /* Route+stub.swift */; };
+		D83370372A8BBC7800115B00 /* Sender+stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370362A8BBC7800115B00 /* Sender+stub.swift */; };
+		D833703B2A8BBEFB00115B00 /* MockDeliveriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833703A2A8BBEFB00115B00 /* MockDeliveriesRepository.swift */; };
+		D833703F2A8BC31600115B00 /* MockDeliveriesLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833703E2A8BC31600115B00 /* MockDeliveriesLocalStorage.swift */; };
+		D83370422A8BC38800115B00 /* MockDeliveriesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370412A8BC38800115B00 /* MockDeliveriesWebservice.swift */; };
+		D83370442A8BC41D00115B00 /* GetDeliveriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370432A8BC41D00115B00 /* GetDeliveriesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,13 @@
 		D83370242A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesRepositoryImpl.swift; sourceTree = "<group>"; };
 		D83370262A8BB92400115B00 /* DeliveriesWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesWebservice.swift; sourceTree = "<group>"; };
 		D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesLocalStorage.swift; sourceTree = "<group>"; };
+		D83370322A8BBC5F00115B00 /* Delivery+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delivery+stub.swift"; sourceTree = "<group>"; };
+		D83370342A8BBC7300115B00 /* Route+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Route+stub.swift"; sourceTree = "<group>"; };
+		D83370362A8BBC7800115B00 /* Sender+stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sender+stub.swift"; sourceTree = "<group>"; };
+		D833703A2A8BBEFB00115B00 /* MockDeliveriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeliveriesRepository.swift; sourceTree = "<group>"; };
+		D833703E2A8BC31600115B00 /* MockDeliveriesLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeliveriesLocalStorage.swift; sourceTree = "<group>"; };
+		D83370412A8BC38800115B00 /* MockDeliveriesWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeliveriesWebservice.swift; sourceTree = "<group>"; };
+		D83370432A8BC41D00115B00 /* GetDeliveriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeliveriesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +192,7 @@
 		D833700B2A8BB3E600115B00 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D833702F2A8BBC4F00115B00 /* Delivery Detail */,
 				D833700C2A8BB3EE00115B00 /* Delivery List */,
 			);
 			path = Scenes;
@@ -186,6 +201,8 @@
 		D833700C2A8BB3EE00115B00 /* Delivery List */ = {
 			isa = PBXGroup;
 			children = (
+				D83370382A8BBEED00115B00 /* Data */,
+				D833702D2A8BBC3D00115B00 /* Domain */,
 			);
 			path = "Delivery List";
 			sourceTree = "<group>";
@@ -243,7 +260,7 @@
 		D833701D2A8BB7EB00115B00 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D83370232A8BB86200115B00 /* LocalStorage */,
+				D83370232A8BB86200115B00 /* Local Storage */,
 				D83370222A8BB85D00115B00 /* Webservices */,
 				D833701E2A8BB7EF00115B00 /* Repositories */,
 			);
@@ -274,12 +291,88 @@
 			path = Webservices;
 			sourceTree = "<group>";
 		};
-		D83370232A8BB86200115B00 /* LocalStorage */ = {
+		D83370232A8BB86200115B00 /* Local Storage */ = {
 			isa = PBXGroup;
 			children = (
 				D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */,
 			);
-			path = LocalStorage;
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		D833702D2A8BBC3D00115B00 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D833702E2A8BBC4600115B00 /* Usecases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D833702E2A8BBC4600115B00 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				D83370432A8BC41D00115B00 /* GetDeliveriesTests.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		D833702F2A8BBC4F00115B00 /* Delivery Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D83370302A8BBC5600115B00 /* Domain */,
+			);
+			path = "Delivery Detail";
+			sourceTree = "<group>";
+		};
+		D83370302A8BBC5600115B00 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D83370312A8BBC5900115B00 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D83370312A8BBC5900115B00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D83370322A8BBC5F00115B00 /* Delivery+stub.swift */,
+				D83370342A8BBC7300115B00 /* Route+stub.swift */,
+				D83370362A8BBC7800115B00 /* Sender+stub.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D83370382A8BBEED00115B00 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D833703D2A8BC30800115B00 /* Webservices */,
+				D833703C2A8BC2F700115B00 /* Local Storage */,
+				D83370392A8BBEEF00115B00 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D83370392A8BBEEF00115B00 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D833703A2A8BBEFB00115B00 /* MockDeliveriesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D833703C2A8BC2F700115B00 /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				D833703E2A8BC31600115B00 /* MockDeliveriesLocalStorage.swift */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		D833703D2A8BC30800115B00 /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				D83370412A8BC38800115B00 /* MockDeliveriesWebservice.swift */,
+			);
+			path = Webservices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +524,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8336FF02A8BAF9B00115B00 /* SwiftUI_MVVMTests.swift in Sources */,
+				D83370352A8BBC7300115B00 /* Route+stub.swift in Sources */,
+				D83370442A8BC41D00115B00 /* GetDeliveriesTests.swift in Sources */,
+				D833703F2A8BC31600115B00 /* MockDeliveriesLocalStorage.swift in Sources */,
+				D83370422A8BC38800115B00 /* MockDeliveriesWebservice.swift in Sources */,
+				D833703B2A8BBEFB00115B00 /* MockDeliveriesRepository.swift in Sources */,
+				D83370372A8BBC7800115B00 /* Sender+stub.swift in Sources */,
+				D83370332A8BBC5F00115B00 /* Delivery+stub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

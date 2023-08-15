@@ -7,9 +7,19 @@
 
 import Foundation
 
-struct Sender {
+class Sender {
 
     let phone: String
     let name: String
     let email: String
+
+    init(
+        phone: String,
+        name: String,
+        email: String
+    ) {
+        self.phone = phone
+        self.name = name
+        self.email = email
+    }
 }

@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct Route {
+class Route {
 
     let start: String
     let end: String
+
+    init(start: String, end: String) {
+        self.start = start
+        self.end = end
+    }
 }
