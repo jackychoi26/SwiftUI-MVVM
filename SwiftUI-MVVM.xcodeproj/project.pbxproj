@@ -17,6 +17,12 @@
 		D83370102A8BB41E00115B00 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833700F2A8BB41E00115B00 /* Delivery.swift */; };
 		D83370122A8BB49800115B00 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370112A8BB49800115B00 /* Route.swift */; };
 		D83370142A8BB4B400115B00 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370132A8BB4B400115B00 /* Sender.swift */; };
+		D83370182A8BB71100115B00 /* DeliveryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370172A8BB71100115B00 /* DeliveryListView.swift */; };
+		D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833701A2A8BB7A200115B00 /* GetDeliveries.swift */; };
+		D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370202A8BB81300115B00 /* DeliveriesRepository.swift */; };
+		D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370242A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift */; };
+		D83370272A8BB92400115B00 /* DeliveriesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370262A8BB92400115B00 /* DeliveriesWebservice.swift */; };
+		D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,12 @@
 		D833700F2A8BB41E00115B00 /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		D83370112A8BB49800115B00 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		D83370132A8BB4B400115B00 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		D83370172A8BB71100115B00 /* DeliveryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListView.swift; sourceTree = "<group>"; };
+		D833701A2A8BB7A200115B00 /* GetDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeliveries.swift; sourceTree = "<group>"; };
+		D83370202A8BB81300115B00 /* DeliveriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesRepository.swift; sourceTree = "<group>"; };
+		D83370242A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesRepositoryImpl.swift; sourceTree = "<group>"; };
+		D83370262A8BB92400115B00 /* DeliveriesWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesWebservice.swift; sourceTree = "<group>"; };
+		D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesLocalStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +159,8 @@
 		D83370092A8BB04900115B00 /* Delivery List */ = {
 			isa = PBXGroup;
 			children = (
+				D833701D2A8BB7EB00115B00 /* Data */,
+				D833701C2A8BB7CF00115B00 /* Domain */,
 				D83370162A8BB64200115B00 /* Presentation */,
 				D83370152A8BB60500115B00 /* UI */,
 			);
@@ -197,6 +211,7 @@
 		D83370152A8BB60500115B00 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D83370172A8BB71100115B00 /* DeliveryListView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -206,6 +221,65 @@
 			children = (
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D83370192A8BB78E00115B00 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				D833701A2A8BB7A200115B00 /* GetDeliveries.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		D833701C2A8BB7CF00115B00 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D833701F2A8BB7F500115B00 /* Repositories */,
+				D83370192A8BB78E00115B00 /* Usecases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D833701D2A8BB7EB00115B00 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D83370232A8BB86200115B00 /* LocalStorage */,
+				D83370222A8BB85D00115B00 /* Webservices */,
+				D833701E2A8BB7EF00115B00 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D833701E2A8BB7EF00115B00 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D83370242A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D833701F2A8BB7F500115B00 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D83370202A8BB81300115B00 /* DeliveriesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D83370222A8BB85D00115B00 /* Webservices */ = {
+			isa = PBXGroup;
+			children = (
+				D83370262A8BB92400115B00 /* DeliveriesWebservice.swift */,
+			);
+			path = Webservices;
+			sourceTree = "<group>";
+		};
+		D83370232A8BB86200115B00 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D83370282A8BBA0900115B00 /* DeliveriesLocalStorage.swift */,
+			);
+			path = LocalStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,10 +412,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */,
+				D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */,
+				D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */,
 				D8336FE12A8BAF9A00115B00 /* ContentView.swift in Sources */,
+				D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */,
+				D83370272A8BB92400115B00 /* DeliveriesWebservice.swift in Sources */,
 				D83370122A8BB49800115B00 /* Route.swift in Sources */,
 				D83370102A8BB41E00115B00 /* Delivery.swift in Sources */,
 				D8336FDF2A8BAF9A00115B00 /* SwiftUI_MVVMApp.swift in Sources */,
+				D83370182A8BB71100115B00 /* DeliveryListView.swift in Sources */,
 				D83370142A8BB4B400115B00 /* Sender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
