@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DeliveryDetailView: View {
+
+    let viewModel: DeliveryDetailViewModel
+
     var body: some View {
         VStack {
             ScrollView {
@@ -18,7 +21,7 @@ struct DeliveryDetailView: View {
 
                         Spacer()
 
-                        Text("Hong Kong")
+                        Text(viewModel.from)
                             .font(.title2)
                     }
                     HStack {
@@ -27,7 +30,7 @@ struct DeliveryDetailView: View {
 
                         Spacer()
 
-                        Text("United Kingdom")
+                        Text(viewModel.to)
                             .font(.title2)
                     }
                 }
@@ -43,7 +46,7 @@ struct DeliveryDetailView: View {
                     }
 
                     AsyncImage(
-                        url: URL(string: "https://loremflickr.com/320/240/cat?lock=9953")
+                        url: viewModel.imageUrl
                     ) {
                         $0
                             .resizable()
@@ -65,7 +68,7 @@ struct DeliveryDetailView: View {
                     Text("Delivery Fee")
                         .font(.title2)
                     Spacer()
-                    Text("$85")
+                    Text(viewModel.charge)
                         .font(.title2)
                 }
                 .padding()
@@ -73,7 +76,7 @@ struct DeliveryDetailView: View {
                 .padding()
             }
             Button(action: {
-                print("Button was tapped!")
+                viewModel.onPrimaryButtonPress()
             }) {
                 Text("Add to Favorite")
                     .font(.title2)
@@ -89,6 +92,8 @@ struct DeliveryDetailView: View {
 
 struct DeliveryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DeliveryDetailView()
+        DeliveryDetailView(viewModel:
+                .init(delivery: Delivery(id: "", remarks: "", pickupTime: Date(), goodsPicture: URL(string: ""), deliveryFee: "", surchage: "", route: .init(start: "", end: ""), sender: .init(phone: "", name: "", email: "")))
+        )
     }
 }

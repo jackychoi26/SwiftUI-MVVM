@@ -13,13 +13,14 @@ struct DeliveryListView: View {
 
     var body: some View {
         ScrollView {
-            ForEach(viewModel.deliveries) {
-                delivery in
+            ForEach(viewModel.deliveryDetailViewModels, id: \.id) {
+                deliveryDetailViewModel in
                 NavigationLink {
                     // TODO: Pass the loaded image to next page
-                    DeliveryDetailView()
+                    DeliveryDetailView(viewModel: deliveryDetailViewModel)
                 } label: {
-                    DeliveryRowView(viewModel: .init())
+                    DeliveryRowView(viewModel: deliveryDetailViewModel)
+                        .foregroundColor(.black)
                 }
             }
         }

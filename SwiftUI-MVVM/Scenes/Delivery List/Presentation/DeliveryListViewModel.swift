@@ -14,14 +14,17 @@ class DeliveryListViewModel: ObservableObject {
 
     private var offset: Int = 0
 
-    @Published var deliveries: [Delivery] = []
+    @Published var deliveryDetailViewModels: [DeliveryDetailViewModel] = []
 
     init(getDeliveries: GetDeliveries = .init()) {
         self.getDeliveries = getDeliveries
     }
 
     func fetchDeliveries() async {
-        deliveries = await getDeliveries.execute(offset: 0)
+        let deliveries = await getDeliveries.execute(offset: 0)
+        deliveryDetailViewModels = deliveries.compactMap {
+            DeliveryDetailViewModel(delivery: $0)
+        }
     }
 
     func updateDeliveries() async {

@@ -33,9 +33,10 @@
 		D83370462A8CF99600115B00 /* DeliveriesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370452A8CF99600115B00 /* DeliveriesRepositoryTests.swift */; };
 		D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */; };
 		D833704E2A8CFF8600115B00 /* DeliveryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833704D2A8CFF8600115B00 /* DeliveryRowView.swift */; };
-		D83370502A8D01E200115B00 /* DeliveryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */; };
 		D83370562A8D07E300115B00 /* DeliveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370552A8D07E300115B00 /* DeliveryDetailViewModel.swift */; };
 		D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */; };
+		D833705C2A8D0FDB00115B00 /* Charge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833705B2A8D0FDB00115B00 /* Charge.swift */; };
+		D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833705D2A8D112700115B00 /* DeliveryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +86,10 @@
 		D83370452A8CF99600115B00 /* DeliveriesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesRepositoryTests.swift; sourceTree = "<group>"; };
 		D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModel.swift; sourceTree = "<group>"; };
 		D833704D2A8CFF8600115B00 /* DeliveryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRowView.swift; sourceTree = "<group>"; };
-		D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRowViewModel.swift; sourceTree = "<group>"; };
 		D83370552A8D07E300115B00 /* DeliveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModel.swift; sourceTree = "<group>"; };
 		D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailView.swift; sourceTree = "<group>"; };
+		D833705B2A8D0FDB00115B00 /* Charge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charge.swift; sourceTree = "<group>"; };
+		D833705D2A8D112700115B00 /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */,
-				D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */,
+				D833705D2A8D112700115B00 /* DeliveryViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -268,6 +270,7 @@
 		D833701C2A8BB7CF00115B00 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D833705A2A8D0FD400115B00 /* Model */,
 				D833701F2A8BB7F500115B00 /* Repositories */,
 				D83370192A8BB78E00115B00 /* Usecases */,
 			);
@@ -409,6 +412,14 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		D833705A2A8D0FD400115B00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D833705B2A8D0FDB00115B00 /* Charge.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -540,10 +551,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */,
-				D83370502A8D01E200115B00 /* DeliveryRowViewModel.swift in Sources */,
 				D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */,
 				D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */,
+				D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */,
 				D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */,
+				D833705C2A8D0FDB00115B00 /* Charge.swift in Sources */,
 				D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */,
 				D8336FE12A8BAF9A00115B00 /* ContentView.swift in Sources */,
 				D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */,
