@@ -31,6 +31,11 @@
 		D83370422A8BC38800115B00 /* MockDeliveriesWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370412A8BC38800115B00 /* MockDeliveriesWebservice.swift */; };
 		D83370442A8BC41D00115B00 /* GetDeliveriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370432A8BC41D00115B00 /* GetDeliveriesTests.swift */; };
 		D83370462A8CF99600115B00 /* DeliveriesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370452A8CF99600115B00 /* DeliveriesRepositoryTests.swift */; };
+		D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */; };
+		D833704E2A8CFF8600115B00 /* DeliveryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833704D2A8CFF8600115B00 /* DeliveryRowView.swift */; };
+		D83370502A8D01E200115B00 /* DeliveryRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */; };
+		D83370562A8D07E300115B00 /* DeliveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370552A8D07E300115B00 /* DeliveryDetailViewModel.swift */; };
+		D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,11 @@
 		D83370412A8BC38800115B00 /* MockDeliveriesWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeliveriesWebservice.swift; sourceTree = "<group>"; };
 		D83370432A8BC41D00115B00 /* GetDeliveriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDeliveriesTests.swift; sourceTree = "<group>"; };
 		D83370452A8CF99600115B00 /* DeliveriesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesRepositoryTests.swift; sourceTree = "<group>"; };
+		D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryListViewModel.swift; sourceTree = "<group>"; };
+		D833704D2A8CFF8600115B00 /* DeliveryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRowView.swift; sourceTree = "<group>"; };
+		D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryRowViewModel.swift; sourceTree = "<group>"; };
+		D83370552A8D07E300115B00 /* DeliveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailViewModel.swift; sourceTree = "<group>"; };
+		D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +196,8 @@
 		D833700A2A8BB08000115B00 /* Delivery Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D83370542A8D07C500115B00 /* Presentation */,
+				D83370512A8D07BC00115B00 /* UI */,
 				D833700D2A8BB40A00115B00 /* Domain */,
 			);
 			path = "Delivery Detail";
@@ -231,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				D83370172A8BB71100115B00 /* DeliveryListView.swift */,
+				D833704D2A8CFF8600115B00 /* DeliveryRowView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -238,6 +251,8 @@
 		D83370162A8BB64200115B00 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D83370492A8CFB4200115B00 /* DeliveryListViewModel.swift */,
+				D833704F2A8D01E200115B00 /* DeliveryRowViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -378,6 +393,22 @@
 			path = Webservices;
 			sourceTree = "<group>";
 		};
+		D83370512A8D07BC00115B00 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D83370542A8D07C500115B00 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D83370552A8D07E300115B00 /* DeliveryDetailViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,12 +540,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */,
+				D83370502A8D01E200115B00 /* DeliveryRowViewModel.swift in Sources */,
 				D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */,
+				D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */,
 				D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */,
+				D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */,
 				D8336FE12A8BAF9A00115B00 /* ContentView.swift in Sources */,
 				D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */,
 				D83370272A8BB92400115B00 /* DeliveriesWebservice.swift in Sources */,
 				D83370122A8BB49800115B00 /* Route.swift in Sources */,
+				D833704E2A8CFF8600115B00 /* DeliveryRowView.swift in Sources */,
+				D83370562A8D07E300115B00 /* DeliveryDetailViewModel.swift in Sources */,
 				D83370102A8BB41E00115B00 /* Delivery.swift in Sources */,
 				D8336FDF2A8BAF9A00115B00 /* SwiftUI_MVVMApp.swift in Sources */,
 				D83370182A8BB71100115B00 /* DeliveryListView.swift in Sources */,

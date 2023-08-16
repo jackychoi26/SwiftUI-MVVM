@@ -11,7 +11,12 @@ class DeliveriesLocalStorage {
 
     func get() async -> [Delivery]? {
         // TODO: Get from JSON
-        nil
+        [.init(
+            id: "",
+            remarks: "",
+            pickupTime: Date(),
+            goodsPicture: URL(string: "https://www.google.com"),
+            deliveryFee: "21", surchage: "21", route: .init(start: "hehe", end: "haha"), sender: .init(phone: "hehe", name: "hoho", email: "wawa"))]
     }
 
     func save(deliveries: [Delivery]) async {

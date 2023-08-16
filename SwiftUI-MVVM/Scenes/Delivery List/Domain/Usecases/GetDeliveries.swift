@@ -11,7 +11,7 @@ struct GetDeliveries {
 
     private let repository: DeliveriesRepository
 
-    init(repository: DeliveriesRepository) {
+    init(repository: DeliveriesRepository = DeliveriesRepositoryImpl()) {
         self.repository = repository
     }
 

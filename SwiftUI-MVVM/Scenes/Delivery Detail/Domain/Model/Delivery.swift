@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Delivery {
+class Delivery: Identifiable {
 
     let id: String
     let remarks: String

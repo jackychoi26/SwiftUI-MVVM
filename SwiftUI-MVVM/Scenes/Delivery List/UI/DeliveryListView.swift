@@ -8,8 +8,31 @@
 import SwiftUI
 
 struct DeliveryListView: View {
+
+    @StateObject var viewModel = DeliveryListViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ForEach(viewModel.deliveries) {
+                delivery in
+                NavigationLink {
+                    // TODO: Pass the loaded image to next page
+                    DeliveryDetailView()
+                } label: {
+                    DeliveryRowView(viewModel: .init())
+                }
+            }
+        }
+        .refreshable {
+            Task { @MainActor in
+                await viewModel.fetchDeliveries()
+            }
+        }
+        .onAppear {
+            Task { @MainActor in
+                await viewModel.fetchDeliveries()
+            }
+        }
     }
 }
 
