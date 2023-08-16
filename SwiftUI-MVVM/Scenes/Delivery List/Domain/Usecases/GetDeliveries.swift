@@ -15,7 +15,7 @@ struct GetDeliveries {
         self.repository = repository
     }
 
-    func execute(offset: Int, limit: Int = 10) async -> [Delivery] {
-        return await repository.getDeliveries()
+    func execute(offset: Int, limit: Int = 10) async throws -> [Delivery] {
+        return try await repository.getDeliveries()
     }
 }

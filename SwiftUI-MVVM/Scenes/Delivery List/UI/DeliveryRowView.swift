@@ -65,7 +65,7 @@ struct DeliveryRowView_Previews: PreviewProvider {
                     pickupTime: DateFormatter().date(from: "2014-10-06T10:45:38-08:00"),
                     goodsPicture: URL(string: "https://loremflickr.com/320/240/cat?lock=9953"),
                     deliveryFee: "$92.14",
-                    surchage: "$136.46",
+                    surcharge: "$136.46",
                     route: .init(start: "Hong Kong", end: "United Kingdom"),
                     sender: .init(
                         phone: "+1 (942) 512-3379",

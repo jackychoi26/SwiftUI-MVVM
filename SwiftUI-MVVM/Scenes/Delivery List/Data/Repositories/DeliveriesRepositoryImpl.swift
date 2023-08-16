@@ -20,15 +20,20 @@ class DeliveriesRepositoryImpl: DeliveriesRepository  {
         self.webservice = webservice
     }
 
-    func getDeliveries() async -> [Delivery] {
-        if let localDeliveries = await localStorage.get() {
-            return localDeliveries
-        } else {
-            return await webservice.performRequest(offset: 0)
-        }
+    func getDeliveries() async throws -> [Delivery] {
+//        if let localDeliveries = await localStorage.get() {
+//            return localDeliveries
+//        } else {
+            let data = try await webservice.performRequest(offset: 0)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            return try decoder.decode([Delivery].self, from: data)
+//        }
     }
 
-    func updateDeliveries(offset: Int, limit: Int = 10) async -> [Delivery] {
-        return await webservice.performRequest(offset: offset)
+    func updateDeliveries(offset: Int, limit: Int = 10) async throws -> [Delivery] {
+        let data = try await webservice.performRequest(offset: offset)
+        let decoder = JSONDecoder()
+        return try decoder.decode([Delivery].self, from: data)
     }
 }

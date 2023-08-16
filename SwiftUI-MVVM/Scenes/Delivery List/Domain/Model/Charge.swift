@@ -12,9 +12,9 @@ struct Charge {
     private let deliveryFee: String
     private let surcharge: String
 
-    init(deliveryFee: String, surchage: String) {
+    init(deliveryFee: String, surcharge: String) {
         self.deliveryFee = deliveryFee
-        self.surcharge = surchage
+        self.surcharge = surcharge
     }
 
     func toLocalizedFee() -> String? {

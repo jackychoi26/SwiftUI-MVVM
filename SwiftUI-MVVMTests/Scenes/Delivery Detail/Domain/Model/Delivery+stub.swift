@@ -16,7 +16,7 @@ extension Delivery {
         pickupTime: Date? = DateFormatter().date(from: "2014-10-06T10:45:38-08:00"),
         goodsPicture: URL? = URL(string: "https://loremflickr.com/320/240/cat?lock=9953"),
         deliveryFee: String = "$92.14",
-        surchage: String = "$136.46",
+        surcharge: String = "$136.46",
         route: Route = .stub(),
         sender: Sender = .stub()
     ) -> Delivery {
@@ -26,7 +26,7 @@ extension Delivery {
             pickupTime: pickupTime,
             goodsPicture: goodsPicture,
             deliveryFee: deliveryFee,
-            surchage: surchage,
+            surcharge: surcharge,
             route: route,
             sender: sender
         )

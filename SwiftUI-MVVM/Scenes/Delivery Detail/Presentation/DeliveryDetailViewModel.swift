@@ -29,7 +29,7 @@ struct DeliveryDetailViewModel: DeliveryViewModel {
         // TODO: Discard the item if data is corrupted
         charge = Charge(
             deliveryFee: delivery.deliveryFee,
-            surchage: delivery.surchage
+            surcharge: delivery.surcharge
         ).toLocalizedFee() ?? ""
 
         isFavorite = false

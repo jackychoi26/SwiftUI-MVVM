@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Route {
+class Route: Codable {
 
     let start: String
     let end: String

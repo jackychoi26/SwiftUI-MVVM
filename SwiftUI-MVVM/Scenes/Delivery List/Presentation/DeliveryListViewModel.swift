@@ -21,9 +21,14 @@ class DeliveryListViewModel: ObservableObject {
     }
 
     func fetchDeliveries() async {
-        let deliveries = await getDeliveries.execute(offset: 0)
-        deliveryDetailViewModels = deliveries.compactMap {
-            DeliveryDetailViewModel(delivery: $0)
+        do {
+            let deliveries = try await getDeliveries.execute(offset: 0)
+            deliveryDetailViewModels = deliveries.compactMap {
+                DeliveryDetailViewModel(delivery: $0)
+            }
+        } catch {
+            print(error)
+            // TODO: Shows alert
         }
     }
 

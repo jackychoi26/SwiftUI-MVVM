@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Sender {
+class Sender: Codable {
 
     let phone: String
     let name: String

@@ -92,8 +92,23 @@ struct DeliveryDetailView: View {
 
 struct DeliveryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DeliveryDetailView(viewModel:
-                .init(delivery: Delivery(id: "", remarks: "", pickupTime: Date(), goodsPicture: URL(string: ""), deliveryFee: "", surchage: "", route: .init(start: "", end: ""), sender: .init(phone: "", name: "", email: "")))
+        DeliveryDetailView(
+            viewModel: .init(
+                delivery: .init(
+                    id: "5dd5f3a7156bae72fa5a5d6c",
+                    remarks: "Minim veniam minim nisi ullamco consequat anim reprehenderit laboris aliquip voluptate sit.",
+                    pickupTime: DateFormatter().date(from: "2014-10-06T10:45:38-08:00"),
+                    goodsPicture: URL(string: "https://loremflickr.com/320/240/cat?lock=9953"),
+                    deliveryFee: "$92.14",
+                    surcharge: "$136.46",
+                    route: .init(start: "Hong Kong", end: "United Kingdom"),
+                    sender: .init(
+                        phone: "+1 (942) 512-3379",
+                        name: "Kendra Guthrie",
+                        email: "kendraguthrie@comdom.com"
+                    )
+                )
+            )
         )
     }
 }
