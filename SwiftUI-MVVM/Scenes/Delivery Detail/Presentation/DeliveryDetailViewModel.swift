@@ -26,7 +26,7 @@ struct DeliveryDetailViewModel: DeliveryViewModel {
         to = delivery.route.end
         imageUrl = delivery.goodsPicture
         
-        // TODO: Discard the item if data is corrupted
+        // TODO: Discard the item if charge is corrupted
         charge = Charge(
             deliveryFee: delivery.deliveryFee,
             surcharge: delivery.surcharge

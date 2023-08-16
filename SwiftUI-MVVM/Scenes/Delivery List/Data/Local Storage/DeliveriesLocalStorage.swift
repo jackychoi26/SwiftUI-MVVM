@@ -9,17 +9,32 @@ import Foundation
 
 class DeliveriesLocalStorage {
 
-    func get() async -> [Delivery]? {
-        // TODO: Get from JSON
-        [.init(
-            id: "",
-            remarks: "",
-            pickupTime: Date(),
-            goodsPicture: URL(string: "https://loremflickr.com/320/240/cat?lock=9953"),
-            deliveryFee: "21", surcharge: "21", route: .init(start: "Hong Kong", end: "United Kingdom"), sender: .init(phone: "+852 12345678", name: "James Joyce", email: "jamesJoyce@gmail.com"))]
+    private let fileName = "deliveries.json"
+
+    func get() -> Data? {
+        return try? readDeliveriesFromFile()
     }
 
-    func save(deliveries: [Delivery]) async {
-        // TODO: Write to JSON
+    func save(data: Data) {
+        try? writeDeliveriesToFile(data: data)
+    }
+}
+
+private extension DeliveriesLocalStorage {
+
+    func writeDeliveriesToFile(data: Data) throws {
+        let fileURL = try FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent(fileName)
+
+        try data.write(to: fileURL)
+    }
+
+    func readDeliveriesFromFile() throws -> Data {
+        let fileURL = try FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent(fileName)
+
+        return try Data(contentsOf: fileURL)
     }
 }
