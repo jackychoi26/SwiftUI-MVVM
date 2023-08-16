@@ -7,10 +7,14 @@
 
 import Foundation
 
-// TODO: conform to CanPaginate protocol
 class DeliveriesLocalStorage {
 
-    func get(offset: Int, limit: Int = 10) -> [Delivery] {
-        return []
+    func get() async -> [Delivery]? {
+        // TODO: Get from JSON
+        nil
+    }
+
+    func save(deliveries: [Delivery]) async {
+        // TODO: Write to JSON
     }
 }

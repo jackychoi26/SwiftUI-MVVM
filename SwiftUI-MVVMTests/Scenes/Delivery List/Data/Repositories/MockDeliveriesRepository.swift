@@ -12,17 +12,27 @@ class MockDeliveriesRepository: DeliveriesRepositoryImpl {
 
     var invokedGetDeliveries = false
     var invokedGetDeliveriesCount = 0
-    var invokedGetDeliveriesParametersOffset: Int!
-    var invokedGetDeliveriesParametersLimit: Int!
-    var invokedGetDeliveriesParametersList = [(offset: Int, limit: Int)]()
-    var stubbedGetResult: [Delivery]! = []
+    var stubbedGetDeliveriesResult: [Delivery]!
 
-    override func getDeliveries(offset: Int, limit: Int = 10) async -> [Delivery] {
+    override func getDeliveries() async -> [Delivery] {
         invokedGetDeliveries = true
         invokedGetDeliveriesCount += 1
+        return stubbedGetDeliveriesResult
+    }
+
+    var invokedUpdateDeliveries = false
+    var invokedUpdateDeliveriesCount = 0
+    var invokedGetDeliveriesParametersOffset: Int!
+    var invokedGetDeliveriesParametersLimit: Int!
+    var invokedUpdateDeliveriesParametersList = [(offset: Int, limit: Int)]()
+    var stubbedUpdateDeliveriesResult: [Delivery]!
+
+    override func updateDeliveries(offset: Int, limit: Int = 10) async -> [Delivery] {
+        invokedUpdateDeliveries = true
+        invokedUpdateDeliveriesCount += 1
         invokedGetDeliveriesParametersOffset = offset
         invokedGetDeliveriesParametersLimit = limit
-        invokedGetDeliveriesParametersList.append((offset, limit))
-        return stubbedGetResult
+        invokedUpdateDeliveriesParametersList.append((offset, limit))
+        return stubbedUpdateDeliveriesResult
     }
 }

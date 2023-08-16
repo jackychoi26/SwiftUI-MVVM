@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: conform to CanPaginate protocol
 class DeliveriesWebservice {
 
     func performRequest(offset: Int, limit: Int = 10) async -> [Delivery] {

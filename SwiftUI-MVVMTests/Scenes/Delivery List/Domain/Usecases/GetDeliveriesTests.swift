@@ -13,12 +13,16 @@ class GetDeliveriesTests: XCTestCase {
     var sut: GetDeliveries!
 
     func test_ReturnsDeliveries_When_DeliveriesAreGiven() async {
+        // Arrange
         let repository = MockDeliveriesRepository()
-        repository.stubbedGetResult = [.stub(id: "test1"), .stub(id: "test2")]
+        repository.stubbedGetDeliveriesResult = [.stub(id: "test1"), .stub(id: "test2")]
         sut = .init(repository: repository)
 
+        // Act
         let result = await sut.execute(offset: 2)
 
+
+        // Assert
         XCTAssertTrue(repository.invokedGetDeliveries)
         XCTAssertEqual(repository.invokedGetDeliveriesCount, 1)
         XCTAssertEqual(repository.invokedGetDeliveriesParametersOffset, 2)

@@ -8,5 +8,6 @@
 import Foundation
 
 protocol DeliveriesRepository {
-    func getDeliveries(offset: Int, limit: Int) async -> [Delivery]
+    func getDeliveries() async -> [Delivery]
+    func updateDeliveries(offset: Int, limit: Int) async -> [Delivery]
 }

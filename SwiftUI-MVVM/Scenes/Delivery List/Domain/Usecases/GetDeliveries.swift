@@ -16,6 +16,6 @@ struct GetDeliveries {
     }
 
     func execute(offset: Int, limit: Int = 10) async -> [Delivery] {
-        return await repository.getDeliveries(offset: offset, limit: limit)
+        return await repository.getDeliveries()
     }
 }
