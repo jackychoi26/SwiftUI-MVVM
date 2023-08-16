@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeliveryDetailView: View {
 
-    let viewModel: DeliveryDetailViewModel
+    @StateObject var viewModel: DeliveryDetailViewModel
 
     var body: some View {
         VStack {
@@ -50,7 +50,6 @@ struct DeliveryDetailView: View {
                     ) {
                         $0
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
                             .frame(width: 200, height: 200)
                     } placeholder: {
                         Color.gray
@@ -78,7 +77,7 @@ struct DeliveryDetailView: View {
             Button(action: {
                 viewModel.onPrimaryButtonPress()
             }) {
-                Text("Add to Favorite")
+                Text(viewModel.isFavorite ? "Remove favorite" : "Add to Favorite")
                     .font(.title2)
                     .padding(.vertical)
                     .padding(.horizontal, 60)
@@ -107,7 +106,8 @@ struct DeliveryDetailView_Previews: PreviewProvider {
                         name: "Kendra Guthrie",
                         email: "kendraguthrie@comdom.com"
                     )
-                )
+                ),
+                isFavorite: true
             )
         )
     }

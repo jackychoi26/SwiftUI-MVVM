@@ -7,20 +7,24 @@
 
 import Foundation
 
-struct DeliveryDetailViewModel: DeliveryViewModel {
+class DeliveryDetailViewModel: DeliveryViewModel, ObservableObject {
 
     let id: String
     let from: String
     let to: String
     let imageUrl: URL?
     let charge: String
-    let isFavorite: Bool
+    @Published var isFavorite: Bool
 
-    func onPrimaryButtonPress() {
+    var onIsFavoriteUpdate: (() -> ())?
 
-    }
+    private let toggleFavoriteDelivery: ToggleFavoriteDelivery
 
-    init(delivery: Delivery) {
+    init(
+        delivery: Delivery,
+        isFavorite: Bool,
+        toggleFavoriteDelivery: ToggleFavoriteDelivery = .init()
+    ) {
         id = delivery.id
         from = delivery.route.start
         to = delivery.route.end
@@ -32,6 +36,13 @@ struct DeliveryDetailViewModel: DeliveryViewModel {
             surcharge: delivery.surcharge
         ).toLocalizedFee() ?? ""
 
-        isFavorite = false
+        self.isFavorite = isFavorite
+        self.toggleFavoriteDelivery = toggleFavoriteDelivery
+    }
+
+    func onPrimaryButtonPress() {
+        toggleFavoriteDelivery.execute(deliveryId: id)
+        isFavorite.toggle()
+        onIsFavoriteUpdate?()
     }
 }

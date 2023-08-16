@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeliveryRowView: View {
 
-    let viewModel: DeliveryViewModel
+    @ObservedObject var viewModel: DeliveryDetailViewModel
 
     var body: some View {
         HStack {
@@ -18,7 +18,6 @@ struct DeliveryRowView: View {
             ) {
                 $0
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
                     .frame(width: 70, height: 70)
             } placeholder: {
                 Color.gray
@@ -72,7 +71,8 @@ struct DeliveryRowView_Previews: PreviewProvider {
                         name: "Kendra Guthrie",
                         email: "kendraguthrie@comdom.com"
                     )
-                )
+                ),
+                isFavorite: true
             )
         )
     }

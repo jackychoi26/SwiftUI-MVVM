@@ -14,4 +14,6 @@ protocol DeliveryViewModel {
     var imageUrl: URL? { get }
     var charge: String { get }
     var isFavorite: Bool { get }
+
+    var onIsFavoriteUpdate: (() -> ())? { get set }
 }

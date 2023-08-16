@@ -39,6 +39,11 @@
 		D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833705D2A8D112700115B00 /* DeliveryViewModel.swift */; };
 		D83370622A8D1D0B00115B00 /* UpdateDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370612A8D1D0B00115B00 /* UpdateDeliveries.swift */; };
 		D83370642A8D23D600115B00 /* CanFetchMoreDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370632A8D23D600115B00 /* CanFetchMoreDeliveries.swift */; };
+		D833706E2A8D2AFE00115B00 /* FavoriteDeliveriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833706D2A8D2AFE00115B00 /* FavoriteDeliveriesRepository.swift */; };
+		D83370712A8D2C8100115B00 /* FavoriteDeliveriesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370702A8D2C8100115B00 /* FavoriteDeliveriesRepositoryImpl.swift */; };
+		D83370742A8D2E6300115B00 /* Array+toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370732A8D2E6300115B00 /* Array+toggle.swift */; };
+		D83370772A8D2EBF00115B00 /* ToggleFavoriteDelivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370762A8D2EBF00115B00 /* ToggleFavoriteDelivery.swift */; };
+		D83370792A8D2F8900115B00 /* GetFavoriteDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370782A8D2F8900115B00 /* GetFavoriteDeliveries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +99,11 @@
 		D833705D2A8D112700115B00 /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
 		D83370612A8D1D0B00115B00 /* UpdateDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeliveries.swift; sourceTree = "<group>"; };
 		D83370632A8D23D600115B00 /* CanFetchMoreDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanFetchMoreDeliveries.swift; sourceTree = "<group>"; };
+		D833706D2A8D2AFE00115B00 /* FavoriteDeliveriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeliveriesRepository.swift; sourceTree = "<group>"; };
+		D83370702A8D2C8100115B00 /* FavoriteDeliveriesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDeliveriesRepositoryImpl.swift; sourceTree = "<group>"; };
+		D83370732A8D2E6300115B00 /* Array+toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+toggle.swift"; sourceTree = "<group>"; };
+		D83370762A8D2EBF00115B00 /* ToggleFavoriteDelivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteDelivery.swift; sourceTree = "<group>"; };
+		D83370782A8D2F8900115B00 /* GetFavoriteDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFavoriteDeliveries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +154,7 @@
 		D8336FDD2A8BAF9A00115B00 /* SwiftUI-MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				D83370722A8D2E5B00115B00 /* Extensions */,
 				D83370082A8BB03E00115B00 /* Scenes */,
 				D8336FDE2A8BAF9A00115B00 /* SwiftUI_MVVMApp.swift */,
 				D8336FE02A8BAF9A00115B00 /* ContentView.swift */,
@@ -202,6 +213,7 @@
 		D833700A2A8BB08000115B00 /* Delivery Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D83370652A8D2A6800115B00 /* Data */,
 				D83370542A8D07C500115B00 /* Presentation */,
 				D83370512A8D07BC00115B00 /* UI */,
 				D833700D2A8BB40A00115B00 /* Domain */,
@@ -230,6 +242,8 @@
 		D833700D2A8BB40A00115B00 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D83370752A8D2EB200115B00 /* Usecases */,
+				D833706C2A8D2AF000115B00 /* Repositories */,
 				D833700E2A8BB41100115B00 /* Model */,
 			);
 			path = Domain;
@@ -426,6 +440,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D83370652A8D2A6800115B00 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D833706F2A8D2C7800115B00 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D833706C2A8D2AF000115B00 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D833706D2A8D2AFE00115B00 /* FavoriteDeliveriesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D833706F2A8D2C7800115B00 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D83370702A8D2C8100115B00 /* FavoriteDeliveriesRepositoryImpl.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D83370722A8D2E5B00115B00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D83370732A8D2E6300115B00 /* Array+toggle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D83370752A8D2EB200115B00 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				D83370762A8D2EBF00115B00 /* ToggleFavoriteDelivery.swift */,
+				D83370782A8D2F8900115B00 /* GetFavoriteDeliveries.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -558,23 +613,28 @@
 			files = (
 				D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */,
 				D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */,
+				D83370792A8D2F8900115B00 /* GetFavoriteDeliveries.swift in Sources */,
 				D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */,
 				D83370642A8D23D600115B00 /* CanFetchMoreDeliveries.swift in Sources */,
+				D83370712A8D2C8100115B00 /* FavoriteDeliveriesRepositoryImpl.swift in Sources */,
 				D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */,
 				D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */,
 				D833705C2A8D0FDB00115B00 /* Charge.swift in Sources */,
 				D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */,
 				D8336FE12A8BAF9A00115B00 /* ContentView.swift in Sources */,
 				D83370292A8BBA0900115B00 /* DeliveriesLocalStorage.swift in Sources */,
+				D83370742A8D2E6300115B00 /* Array+toggle.swift in Sources */,
 				D83370272A8BB92400115B00 /* DeliveriesWebservice.swift in Sources */,
 				D83370122A8BB49800115B00 /* Route.swift in Sources */,
 				D833704E2A8CFF8600115B00 /* DeliveryRowView.swift in Sources */,
 				D83370562A8D07E300115B00 /* DeliveryDetailViewModel.swift in Sources */,
+				D83370772A8D2EBF00115B00 /* ToggleFavoriteDelivery.swift in Sources */,
 				D83370102A8BB41E00115B00 /* Delivery.swift in Sources */,
 				D83370622A8D1D0B00115B00 /* UpdateDeliveries.swift in Sources */,
 				D8336FDF2A8BAF9A00115B00 /* SwiftUI_MVVMApp.swift in Sources */,
 				D83370182A8BB71100115B00 /* DeliveryListView.swift in Sources */,
 				D83370142A8BB4B400115B00 /* Sender.swift in Sources */,
+				D833706E2A8D2AFE00115B00 /* FavoriteDeliveriesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
