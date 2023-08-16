@@ -10,4 +10,5 @@ import Foundation
 protocol DeliveriesRepository {
     func getDeliveries() async throws -> [Delivery]
     func updateDeliveries(offset: Int, limit: Int) async throws -> [Delivery]
+    func canFetchMore() -> Bool
 }

@@ -1,13 +1,13 @@
 //
-//  GetDeliveries.swift
+//  CanFetchMoreDeliveries.swift
 //  SwiftUI-MVVM
 //
-//  Created by Choi Kin Lung on 15/8/2023.
+//  Created by Choi Kin Lung on 16/8/2023.
 //
 
 import Foundation
 
-struct GetDeliveries {
+struct CanFetchMoreDeliveries {
 
     private let repository: DeliveriesRepository
 
@@ -15,7 +15,8 @@ struct GetDeliveries {
         self.repository = repository
     }
 
-    func execute(offset: Int, limit: Int = 10) async throws -> [Delivery] {
-        try await repository.getDeliveries()
+    func execute() -> Bool {
+        repository.canFetchMore()
     }
 }
+

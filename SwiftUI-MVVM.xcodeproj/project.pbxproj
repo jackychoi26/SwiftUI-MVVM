@@ -37,6 +37,8 @@
 		D83370582A8D07EE00115B00 /* DeliveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */; };
 		D833705C2A8D0FDB00115B00 /* Charge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833705B2A8D0FDB00115B00 /* Charge.swift */; };
 		D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D833705D2A8D112700115B00 /* DeliveryViewModel.swift */; };
+		D83370622A8D1D0B00115B00 /* UpdateDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370612A8D1D0B00115B00 /* UpdateDeliveries.swift */; };
+		D83370642A8D23D600115B00 /* CanFetchMoreDeliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83370632A8D23D600115B00 /* CanFetchMoreDeliveries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		D83370572A8D07EE00115B00 /* DeliveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryDetailView.swift; sourceTree = "<group>"; };
 		D833705B2A8D0FDB00115B00 /* Charge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charge.swift; sourceTree = "<group>"; };
 		D833705D2A8D112700115B00 /* DeliveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewModel.swift; sourceTree = "<group>"; };
+		D83370612A8D1D0B00115B00 /* UpdateDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeliveries.swift; sourceTree = "<group>"; };
+		D83370632A8D23D600115B00 /* CanFetchMoreDeliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanFetchMoreDeliveries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				D833701A2A8BB7A200115B00 /* GetDeliveries.swift */,
+				D83370612A8D1D0B00115B00 /* UpdateDeliveries.swift */,
+				D83370632A8D23D600115B00 /* CanFetchMoreDeliveries.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 				D833701B2A8BB7A200115B00 /* GetDeliveries.swift in Sources */,
 				D83370252A8BB8D900115B00 /* DeliveriesRepositoryImpl.swift in Sources */,
 				D833704A2A8CFB4200115B00 /* DeliveryListViewModel.swift in Sources */,
+				D83370642A8D23D600115B00 /* CanFetchMoreDeliveries.swift in Sources */,
 				D833705E2A8D112700115B00 /* DeliveryViewModel.swift in Sources */,
 				D83370212A8BB81300115B00 /* DeliveriesRepository.swift in Sources */,
 				D833705C2A8D0FDB00115B00 /* Charge.swift in Sources */,
@@ -564,6 +571,7 @@
 				D833704E2A8CFF8600115B00 /* DeliveryRowView.swift in Sources */,
 				D83370562A8D07E300115B00 /* DeliveryDetailViewModel.swift in Sources */,
 				D83370102A8BB41E00115B00 /* Delivery.swift in Sources */,
+				D83370622A8D1D0B00115B00 /* UpdateDeliveries.swift in Sources */,
 				D8336FDF2A8BAF9A00115B00 /* SwiftUI_MVVMApp.swift in Sources */,
 				D83370182A8BB71100115B00 /* DeliveryListView.swift in Sources */,
 				D83370142A8BB4B400115B00 /* Sender.swift in Sources */,

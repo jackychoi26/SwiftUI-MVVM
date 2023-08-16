@@ -1,13 +1,13 @@
 //
-//  GetDeliveries.swift
+//  UpdateDeliveries.swift
 //  SwiftUI-MVVM
 //
-//  Created by Choi Kin Lung on 15/8/2023.
+//  Created by Choi Kin Lung on 16/8/2023.
 //
 
 import Foundation
 
-struct GetDeliveries {
+struct UpdateDeliveries {
 
     private let repository: DeliveriesRepository
 
@@ -16,6 +16,6 @@ struct GetDeliveries {
     }
 
     func execute(offset: Int, limit: Int = 10) async throws -> [Delivery] {
-        try await repository.getDeliveries()
+        try await repository.updateDeliveries(offset: offset, limit: limit)
     }
 }

@@ -7,10 +7,15 @@
 
 import Foundation
 
-class DeliveriesRepositoryImpl: DeliveriesRepository  {
+class DeliveriesRepositoryImpl: DeliveriesRepository {
+
+    private let key = "canFetchMoreDeliveries"
 
     private let localStorage: DeliveriesLocalStorage
     private let webservice: DeliveriesWebservice
+
+    private let decoder: JSONDecoder
+    private let encoder: JSONEncoder
 
     init(
         localStorage: DeliveriesLocalStorage = .init(),
@@ -18,21 +23,27 @@ class DeliveriesRepositoryImpl: DeliveriesRepository  {
     ) {
         self.localStorage = localStorage
         self.webservice = webservice
+
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        decoder = jsonDecoder
+
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.dateEncodingStrategy = .iso8601
+        encoder = jsonEncoder
     }
 
     func getDeliveries() async throws -> [Delivery] {
         if let data = localStorage.get() {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601  // Handling the ISO 8601 date format
             return try decoder.decode([Delivery].self, from: data)
         } else {
             let data = try await webservice.performRequest(offset: 0)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
             let deliveries = try decoder.decode([Delivery].self, from: data)
 
+            updateCanFecthMoreValue(dataCount: deliveries.count)
+
             // Need to make sure the data is in correct format before saving
-            localStorage.save(data: data)
+            localStorage.write(data: data)
 
             return deliveries
         }
@@ -40,7 +51,43 @@ class DeliveriesRepositoryImpl: DeliveriesRepository  {
 
     func updateDeliveries(offset: Int, limit: Int = 10) async throws -> [Delivery] {
         let data = try await webservice.performRequest(offset: offset)
-        let decoder = JSONDecoder()
-        return try decoder.decode([Delivery].self, from: data)
+        let deliveries = try decoder.decode([Delivery].self, from: data)
+
+        updateCanFecthMoreValue(dataCount: deliveries.count)
+
+        if offset == 0 {
+            // Restart the cache
+            localStorage.write(data: data)
+        } else {
+            try appendDataToLocal(data: data)
+        }
+
+        return deliveries
+    }
+
+    func canFetchMore() -> Bool {
+        UserDefaults.standard.bool(forKey: key)
+    }
+}
+
+private extension DeliveriesRepositoryImpl {
+
+    func appendDataToLocal(data: Data) throws {
+        guard let existingData = localStorage.get() else { return }
+        var existingDeliveries = try decoder.decode([Delivery].self, from: existingData)
+
+        let newDeliveries = try decoder.decode([Delivery].self, from: data)
+        existingDeliveries.append(contentsOf: newDeliveries)
+
+        let updatedData = try encoder.encode(existingDeliveries)
+        localStorage.write(data: updatedData)
+    }
+
+    func updateCanFecthMoreValue(dataCount: Int) {
+        if dataCount < 10 {
+            UserDefaults.standard.set(false, forKey: key)
+        } else {
+            UserDefaults.standard.set(true, forKey: key)
+        }
     }
 }

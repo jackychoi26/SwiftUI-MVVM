@@ -23,14 +23,23 @@ struct DeliveryListView: View {
                         .foregroundColor(.black)
                 }
             }
+
+            Rectangle()
+                .fill(Color.clear)
+                .frame(width: 1, height: 20)
+                .onAppear {
+                    Task {
+                        await viewModel.updateDeliveriesIfNeeded()
+                    }
+                }
         }
         .refreshable {
-            Task { @MainActor in
-                await viewModel.fetchDeliveries()
+            Task { 
+                await viewModel.refreshDeliveries()
             }
         }
         .onAppear {
-            Task { @MainActor in
+            Task {
                 await viewModel.fetchDeliveries()
             }
         }

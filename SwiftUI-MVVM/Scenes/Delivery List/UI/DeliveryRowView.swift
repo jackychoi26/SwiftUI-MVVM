@@ -39,7 +39,7 @@ struct DeliveryRowView: View {
             Spacer()
 
             VStack {
-                if (viewModel.isFavorite) {
+                if viewModel.isFavorite {
                     Label("", systemImage: "heart.fill")
                 } else {
                     Rectangle()

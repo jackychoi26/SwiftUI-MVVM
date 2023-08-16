@@ -15,8 +15,30 @@ class DeliveriesLocalStorage {
         return try? readDeliveriesFromFile()
     }
 
-    func save(data: Data) {
+    func write(data: Data) {
         try? writeDeliveriesToFile(data: data)
+    }
+
+    func appendData(data: Data) throws {
+        let fileURL = try FileManager.default
+            .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent(fileName)
+
+        let existingData = try Data(contentsOf: fileURL)
+
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+
+        var existingDeliveries = try decoder.decode([Delivery].self, from: existingData)
+        let newDeliveries = try decoder.decode([Delivery].self, from: data)
+
+        existingDeliveries.append(contentsOf: newDeliveries)
+
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
+        let updatedData = try encoder.encode(existingDeliveries)
+
+        try updatedData.write(to: fileURL)
     }
 }
 
