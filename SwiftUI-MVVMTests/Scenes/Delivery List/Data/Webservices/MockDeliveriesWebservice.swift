@@ -12,15 +12,15 @@ class MockDeliveriesWebservice: DeliveriesWebservice {
 
     var invokedPerformRequest = false
     var invokedPerformRequestCount = 0
-    var invokedPerformRequestParameters: (offset: Int, limit: Int)?
-    var invokedPerformRequestParametersList = [(offset: Int, limit: Int)]()
-    var stubbedGetResult: [Delivery]! = []
+    var invokedPerformRequestParameterOffset: Int!
+    var invokedPerformRequestParameterLimit: Int!
+    var stubbedGetResult: Data!
 
-    override func performRequest(offset: Int, limit: Int = 10) async -> [Delivery] {
+    override func performRequest(offset: Int, limit: Int = 10) async throws -> Data {
         invokedPerformRequest = true
         invokedPerformRequestCount += 1
-        invokedPerformRequestParameters = (offset, limit)
-        invokedPerformRequestParametersList.append((offset, limit))
+        invokedPerformRequestParameterOffset = offset
+        invokedPerformRequestParameterLimit = limit
         return stubbedGetResult
     }
 }

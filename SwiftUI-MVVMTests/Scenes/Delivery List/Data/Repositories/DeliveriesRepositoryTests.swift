@@ -16,11 +16,11 @@ class DeliveriesRepositoryTests: XCTestCase {
         // Arrange
         let localStorage = MockDeliveriesLocalStorage()
         let webservice = MockDeliveriesWebservice()
-        localStorage.stubbedGetResult = [.stub(id: "testing1"), .stub(id: "testing2")]
+        localStorage.stubbedGetResult = try! JSONEncoder().encode([Delivery.stub(id: "testing1"), Delivery.stub(id: "testing2")])
         sut = .init(localStorage: localStorage, webservice: webservice)
 
         // Act
-        let result = await sut.getDeliveries()
+        let result = try! await sut.getDeliveries()
 
         // Assert
         XCTAssertTrue(localStorage.invokedGet)
@@ -36,11 +36,11 @@ class DeliveriesRepositoryTests: XCTestCase {
         let localStorage = MockDeliveriesLocalStorage()
         let webservice = MockDeliveriesWebservice()
         localStorage.stubbedGetResult = nil
-        webservice.stubbedGetResult = [.stub(id: "test1"), .stub(id: "test2")]
+        webservice.stubbedGetResult = try! JSONEncoder().encode([Delivery.stub(id: "test1"), Delivery.stub(id: "test2")])
         sut = .init(localStorage: localStorage, webservice: webservice)
 
         // Act
-        let result = await sut.getDeliveries()
+        let result = try! await sut.getDeliveries()
 
         // Assert
         XCTAssertTrue(webservice.invokedPerformRequest)

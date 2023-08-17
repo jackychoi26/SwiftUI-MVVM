@@ -12,9 +12,9 @@ class MockDeliveriesLocalStorage: DeliveriesLocalStorage {
 
     var invokedGet = false
     var invokedGetCount = 0
-    var stubbedGetResult: [Delivery]? = []
+    var stubbedGetResult: Data?
 
-    override func get() async -> [Delivery]? {
+    override func get() -> Data? {
         invokedGet = true
         invokedGetCount += 1
         return stubbedGetResult
@@ -22,13 +22,11 @@ class MockDeliveriesLocalStorage: DeliveriesLocalStorage {
 
     var invokedSave = false
     var invokedSaveCount = 0
-    var invokedSaveParameters: (deliveries: [Delivery], Void)?
-    var invokedSaveParametersList = [(deliveries: [Delivery], Void)]()
+    var invokedSaveParameter: Data!
 
-    override func save(deliveries: [Delivery]) async {
+    override func write(data: Data) {
         invokedSave = true
         invokedSaveCount += 1
-        invokedSaveParameters = (deliveries, ())
-        invokedSaveParametersList.append((deliveries, ()))
+        invokedSaveParameter = data
     }
 }

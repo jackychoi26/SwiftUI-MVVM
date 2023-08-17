@@ -19,7 +19,7 @@ class GetDeliveriesTests: XCTestCase {
         sut = .init(repository: repository)
 
         // Act
-        let result = await sut.execute(offset: 2)
+        let result = try! await sut.execute(offset: 2)
 
 
         // Assert
